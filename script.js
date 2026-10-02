@@ -38,6 +38,8 @@ const components = [];
 
 addComponentButton.addEventListener("click", function () {
 
+    alert("Add Component clicked!");
+
     const type = componentTypeInput.value;
     const name = componentNameInput.value;
 
