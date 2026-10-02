@@ -5,63 +5,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plasmid Map Builder</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main>
+    <div class="container">
 
+    <header>
         <h1>Plasmid Map Builder</h1>
-
-        <p>
+        <p class="subtitle">
             Create clean, customizable plasmid and genetic construct schematics.
         </p>
+    </header>
 
-        <section>
+    <main class="workspace">
+
+        <section class="card">
+
+            <h2>Build Your Plasmid</h2>
+
+            <p class="helper-text">
+                Define your plasmid and add components to build the map.
+            </p>
+
+            <label for="plasmid-name">
+                Plasmid Name
+            </label>
+
+            <input
+                id="plasmid-name"
+                type="text"
+                placeholder="e.g., CAR Expression Vector"
+            >
+
+            <label for="plasmid-size">
+                Plasmid Size (bp)
+            </label>
+
+            <input
+                id="plasmid-size"
+                type="number"
+                placeholder="e.g., 5000"
+            >
+
+            <label for="component-type">
+                Component Type
+            </label>
+
+            <select id="component-type">
+                <option>Promoter</option>
+                <option>Enhancer</option>
+                <option>Signal Peptide</option>
+                <option>Coding Sequence</option>
+                <option>Linker</option>
+                <option>Reporter</option>
+                <option>Selection Marker</option>
+                <option>Poly(A) Signal</option>
+                <option>Origin of Replication</option>
+                <option>Other</option>
+            </select>
+
+            <label for="component-name">
+                Component Name
+            </label>
+
+            <input
+                id="component-name"
+                type="text"
+                placeholder="e.g., EF1α"
+            >
+
+            <button type="button">
+                + Add Component
+            </button>
+
+        </section>
+
+
+        <section class="card">
 
             <h2>Plasmid Preview</h2>
 
-            <svg
-                width="500"
-                height="500"
-                viewBox="0 0 500 500"
-                aria-label="Plasmid map"
-            >
+            <div class="preview">
 
-                <circle
-                    cx="250"
-                    cy="250"
-                    r="150"
-                    fill="none"
-                    stroke="#d1d5db"
-                    stroke-width="30"
-                />
-
-                <text
-                    x="250"
-                    y="240"
-                    text-anchor="middle"
-                    font-size="24"
-                    font-weight="bold"
+                <svg
+                    viewBox="0 0 500 500"
+                    aria-label="Plasmid map"
                 >
-                    My Plasmid
-                </text>
 
-                <text
-                    x="250"
-                    y="270"
-                    text-anchor="middle"
-                    font-size="16"
-                    fill="#6b7280"
-                >
-                    5,000 bp
-                </text>
+                    <circle
+                        cx="250"
+                        cy="250"
+                        r="150"
+                        fill="none"
+                        stroke="#d1d5db"
+                        stroke-width="30"
+                    />
 
-            </svg>
+                    <text
+                        x="250"
+                        y="240"
+                        text-anchor="middle"
+                        font-size="24"
+                        font-weight="bold"
+                    >
+                        My Plasmid
+                    </text>
+
+                    <text
+                        x="250"
+                        y="270"
+                        text-anchor="middle"
+                        font-size="16"
+                        fill="#6b7280"
+                    >
+                        5,000 bp
+                    </text>
+
+                </svg>
+
+            </div>
 
         </section>
 
     </main>
+
+</div>
 
 </body>
 
