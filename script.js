@@ -55,7 +55,7 @@ addComponentButton.addEventListener("click", function () {
     
     components.push({
         type: type,
-        name: name
+        name: name,
         size: size
     });
 
