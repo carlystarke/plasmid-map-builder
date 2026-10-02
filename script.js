@@ -32,6 +32,7 @@ plasmidSizeInput.addEventListener("input", function () {
 const addComponentButton = document.getElementById("add-component");
 const componentTypeInput = document.getElementById("component-type");
 const componentNameInput = document.getElementById("component-name");
+const componentSizeInput = document.getElementById("component-size");
 const plasmidComponents = document.getElementById("plasmid-components");
 
 const components = [];
@@ -40,20 +41,28 @@ addComponentButton.addEventListener("click", function () {
 
     const type = componentTypeInput.value;
     const name = componentNameInput.value;
+    const size = Number(componentSizeInput.value);
 
     if (name.trim() === "") {
         alert("Please enter a component name.");
         return;
     }
 
+    if (size <= 0) {
+    alert("Please enter a valid component size.");
+    return;
+    }
+    
     components.push({
         type: type,
         name: name
+        size: size
     });
 
     drawComponents();
 
     componentNameInput.value = "";
+    componentSizeInput.value = "";
 
  });
 
